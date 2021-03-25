@@ -10,23 +10,31 @@ class App extends React.Component {
     }
 
     this.destroyTour = this.destroyTour.bind(this);
+    this.refresh = this.refresh.bind(this);
+  }
+
+  refresh(){
+    this.setState({
+      tours: data.tours
+    });
   }
 
   destroyTour(id) {
     this.setState({
-      tours: data.tours.filter(tour => tour.id !== id)
-    });
+      tours: this.state.tours.filter(tour => tour.id !== id)
+    })
   }
 
   render() {
     return (
       <div className="App">
         <div className="title">
-          <h1>Tours Available</h1>
+          <h1>{this.state.tours.length > 0 ? "Tours available" : "No tours left"}</h1>
         </div>
           <div className="container">
             <Tours data={this.state.tours} destroy={this.destroyTour}/>
           </div>
+          {this.state.tours.length == 0 ? (<div className="refresh-div"><button className="refreshButton" onClick={this.refresh}>Refresh</button></div>):""}
       </div>
     );}
 }

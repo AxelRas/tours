@@ -21,7 +21,7 @@ export default class Tours extends Component {
                         <div className="tour-desc">
                             <p id={"#" + tour.title}>{tour.description}</p>
                         </div>
-                        <button className="button" onClick={this.props.destroy}>Not Interested</button>
+                        <button className="button" onClick={() => this.props.destroy(tour.id)}>Not Interested</button>
                     </div>
                 ))}
             </div>

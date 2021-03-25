@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
 
+html {
+  background-color:rgb(212, 212, 212);
+}
 .App {
   position: absolute;
   background-color:rgb(212, 212, 212);
@@ -77,5 +80,24 @@
   font-size: 1.2em;
   margin-top: 10px;
   margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.refresh-div {
+  justify-self: center;
+  align-self: center;
+  text-align:center;
+}
+
+.refreshButton {
+  font-family: 'Oswald', sans-serif;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 15px;
+  margin: 15px;
+  font-weight: 400;
+  font-size: 1.2em;
+  background-color:rgb(46, 138, 243);
+  color:rgb(238, 238, 238);
   cursor: pointer;
 }
