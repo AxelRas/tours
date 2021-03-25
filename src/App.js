@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Tours from './components/Tours';
+import data from './tours.json';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      tours: data.tours
+    }
+
+    this.destroyTour = this.destroyTour.bind(this);
+  }
+
+  destroyTour(id) {
+    this.setState({
+      tours: data.tours.filter(tour => tour.id !== id)
+    });
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <div className="title">
+          <h1>Tours Available</h1>
+        </div>
+          <div className="container">
+            <Tours data={this.state.tours} destroy={this.destroyTour}/>
+          </div>
+      </div>
+    );}
 }
 
 export default App;
