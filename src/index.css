@@ -83,6 +83,10 @@ html {
   cursor: pointer;
 }
 
+.button:focus {
+  outline: 0;
+}
+
 .refresh-div {
   justify-self: center;
   align-self: center;
