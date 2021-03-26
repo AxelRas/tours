@@ -34,7 +34,7 @@ class App extends React.Component {
           <div className="container">
             <Tours data={this.state.tours} destroy={this.destroyTour}/>
           </div>
-          {this.state.tours.length == 0 ? (<div className="refresh-div"><button className="refreshButton" onClick={this.refresh}>Refresh</button></div>):""}
+          {this.state.tours.length === 0 ? (<div className="refresh-div"><button className="refreshButton" onClick={this.refresh}>Refresh</button></div>):""}
       </div>
     );}
 }
